@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_bg"
-    tools:context=".MainActivity">
+    tools:context=".ui.view.MainActivity">
 
     <TextView
         android:id="@+id/tv_city"
@@ -24,27 +24,40 @@
         style="@style/TextAppearance.MaterialComponents.Headline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="24°"
+        android:layout_marginTop="4dp"
+        android:text="24"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_city" />
 
-    <ImageView
-        android:id="@+id/iv_status"
+    <TextView
+        android:id="@+id/tv_symbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="°C"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_degrees"
-        app:layout_constraintTop_toTopOf="@+id/tv_degrees"
+        app:layout_constraintTop_toTopOf="@+id/tv_degrees" />
+
+    <ImageView
+        android:id="@+id/iv_status"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
         app:srcCompat="@drawable/ic_baseline_cloud_24" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv_date"
         style="@style/TextAppearance.MaterialComponents.Subtitle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:text="11 Febrero, 2022 17.40"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,12 +69,11 @@
         style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="Cielo despejado"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_status" />
 
     <TextView
         android:id="@+id/tv_temp_min"
@@ -138,6 +150,8 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="8dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_feels_like">
@@ -175,6 +189,8 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="8dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/ll_sunrise">
@@ -212,6 +228,8 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="8dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/ll_sunset">
@@ -250,6 +268,8 @@
         android:orientation="vertical"
         android:padding="8dp"
         android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="0.968"
         app:layout_constraintStart_toStartOf="parent"
@@ -288,6 +308,8 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="8dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.593"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -326,42 +348,72 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="8dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/ll_humidity">
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
             android:contentDescription="@null"
-            android:src="@drawable/wind"
+            android:src="@drawable/cct_logo"
             app:tint="@color/secundary" />
-
-        <TextView
-            android:id="@+id/tv_info"
-            style="@style/TextAppearance.MaterialComponents.Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Creada por"
-            android:textColor="@color/secundary" />
-
-        <TextView
-            android:id="@+id/tv_info_val"
-            style="@style/TextAppearance.MaterialComponents.Caption"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CCT"
-            android:textColor="@color/secundary" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="180dp"
+    <TextView
+        android:id="@+id/tv_tomorrow"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="30dp"
+        android:text="Mañana"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/tv_temp_max_tom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_humidity"
-        app:srcCompat="@drawable/cct_logo" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_degrees"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/tv_temp_max_tom"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_status"
+        app:layout_constraintEnd_toStartOf="@+id/tv_temp_min_tom"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_degrees" />
+
+    <TextView
+        android:id="@+id/tv_temp_min_tom"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="/3°C"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_temp_max_tom"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_status_tom"
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="Cielo claro"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_date"
+        app:layout_constraintTop_toBottomOf="@+id/tv_temp_max_tom" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,4 +4,12 @@
     <string name="permission_denied_explanation">El permiso fue negado, pero es indispensable para usar el app</string>
     <string name="permission_rationale">El permiso de ubicación es indispensable para usar el app</string>
     <string name="settings">Ajustes</string>
+    <string name="imageviewiconhoursdescription" translatable="false">Image relate to Weather Forecast at Hours</string>
+    <string name="no_cur_weather">No se pudo encontrar el clima actual</string>
+    <string name="api_key">cbf45d88a9b71a3309d905dd5d1c4c7e</string>
+    <string name="permission_retionale" translatable="false">Location permission is required to use this app.</string>
+    <string name="location_not_found" translatable="false">Ubicación no encontrada.</string>
+    <string name="weather_not_found" translatable="false">Clima no encontrado.</string>
+    <string name="city_not_found" translatable="false">Clima no encontrado.</string>
+    <string name="error_ocurred" translatable="false">Ocurrió un error no contemplado.</string>
 </resources>
