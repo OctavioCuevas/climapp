@@ -3,16 +3,21 @@ package com.example.climapp.use_cases
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Context
 import android.content.res.Resources
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.LifecycleOwner
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.climapp.databinding.ActivityMainBinding
 import com.example.climapp.exceptions.NeverAskPermissionException
 import com.example.climapp.exceptions.NoLocationFoundException
 import com.example.climapp.exceptions.NullApiKeyException
 import com.example.climapp.exceptions.PermissionDeniedException
+import com.example.climapp.ui.adapters.ByHoursAdapter
 import com.example.climapp.ui.model.City
+import com.example.climapp.ui.model.Current
 import com.example.climapp.ui.model.CurrentWeatherFormat
 import com.example.climapp.ui.model.OneCall
 import com.example.climapp.ui.viewmodels.MainActivityVM
@@ -21,6 +26,7 @@ import kotlinx.coroutines.launch
 import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
+import coil.load
 
 class CurrentWeather {
     private var latitude = ""
@@ -44,6 +50,7 @@ class CurrentWeather {
     lateinit var lifecycleScope: LifecycleCoroutineScope
     lateinit var resources: Resources
     lateinit var binding: ActivityMainBinding
+    lateinit var context: Context
     var packageName = ""
 
     @SuppressLint("MissingPermission")
@@ -111,7 +118,7 @@ class CurrentWeather {
                 weatherEntity.apply {
                     val weatherFormat =
                         formatCurrentWeather(weatherEntity, units, resources, packageName)
-                    showCurrentWeatherData(weatherFormat)
+                    showCurrentWeatherData(weatherFormat, weatherEntity)
                 }
             }
         }
@@ -165,7 +172,7 @@ class CurrentWeather {
 
     }
 
-    private fun showCurrentWeatherData(prettyWeather: CurrentWeatherFormat?) {
+    private fun showCurrentWeatherData(prettyWeather: CurrentWeatherFormat?, weatherEntity: OneCall) {
         binding.apply {
             tvDate.text = prettyWeather?.updateAt
             tvDegrees.text = prettyWeather?.temp
@@ -174,7 +181,8 @@ class CurrentWeather {
             tvTempMaxTom.text = prettyWeather?.tempInDayTom
             tvTempMinTom.text = prettyWeather?.tempInNightTom
             tvStatusTom.text = prettyWeather?.forecastTom
-            //ivStatus.load(prettyWeather!!.iconUrl)
+            ivStatus.load(prettyWeather!!.iconUrl)
+            setRecyclerByHour(weatherEntity.hourly, recyclerViewHours)
         }
     }
 
@@ -185,6 +193,14 @@ class CurrentWeather {
 
         binding.apply {
             tvCity.text = address
+        }
+    }
+
+    private fun setRecyclerByHour(hours: List<Current>, recyclerView: RecyclerView) {
+        val byHourAdapter = ByHoursAdapter(context, hours)
+        recyclerView.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = byHourAdapter
         }
     }
 }

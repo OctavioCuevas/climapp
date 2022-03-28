@@ -94,6 +94,7 @@ class MainActivity : AppCompatActivity() {
             curWeather.resources = resources
             curWeather.packageName = this.packageName
             curWeather.binding = binding
+            curWeather.context = this
             if (!checkPermissions(this)) {
                 curWeather.requestPermissions(this)
             } else {

@@ -1,6 +1,5 @@
 package com.example.climapp.network.services
 
-import com.example.climapp.network.WeatherEntity
 import com.example.climapp.ui.model.OneCall
 import retrofit2.Response
 import retrofit2.http.GET

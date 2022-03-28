@@ -19,7 +19,7 @@
         android:background="@drawable/gradient_bg">
 
         <TextView
-            android:id="@+id/textViewTempHours"
+            android:id="@+id/tv_temp_by_hour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -33,29 +33,29 @@
             tools:text="21°" />
 
         <ImageView
-            android:id="@+id/imageViewIconHours"
+            android:id="@+id/iv_status_by_hour"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="4dp"
             android:contentDescription="@string/imageviewiconhoursdescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTempHours"
+            app:layout_constraintTop_toBottomOf="@+id/tv_temp_by_hour"
             tools:ignore="ImageContrastCheck"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textViewTimeHours"
+            android:id="@+id/tv_hour_by_hour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
-            android:textColor="@color/primary"
+            android:textColor="@color/white"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewIconHours"
+            app:layout_constraintTop_toBottomOf="@+id/iv_status_by_hour"
             tools:ignore="TextContrastCheck"
             tools:text="11:00 PM" />
     </androidx.constraintlayout.widget.ConstraintLayout>
