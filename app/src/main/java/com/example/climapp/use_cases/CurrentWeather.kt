@@ -32,6 +32,7 @@ class CurrentWeather {
     private var latitude = ""
     private var longitude = ""
     private var unit = ""
+    private var languageCode = ""
     var apiID: String = ""
         set(value) {
             field = value.ifEmpty { throw NullApiKeyException() }
@@ -41,9 +42,10 @@ class CurrentWeather {
             this.unit = if (value) "imperial" else "metric"
             field = value
         }
-    var languageCode = ""
+    var lang = false
         set(value) {
-            field = if (value == "es" || value == "en") value else "es"
+            languageCode = if (value) "en" else "sp"
+            field = value
         }
     lateinit var viewModel: MainActivityVM
     lateinit var owner: LifecycleOwner
@@ -63,14 +65,7 @@ class CurrentWeather {
                 if (this.longitude != "" && this.latitude != "") {
                     this.getWeatherData()
                     this.getCityData()
-                    this.observers(
-                        viewModel,
-                        owner,
-                        lifecycleScope,
-                        units,
-                        resources,
-                        packageName
-                    )
+                    this.observers()
                 }
             } else {
                 throw NoLocationFoundException()
@@ -105,14 +100,7 @@ class CurrentWeather {
         this.viewModel.getCurrentCity(this.latitude, this.longitude, this.apiID)
     }
 
-    private fun observers(
-        viewModel: MainActivityVM,
-        owner: LifecycleOwner,
-        lifecycleScope: LifecycleCoroutineScope,
-        units: Boolean,
-        resources: Resources,
-        packageName: String
-    ) {
+    private fun observers() {
         viewModel.getWeatherResponse.observe(owner) { weatherEntity: OneCall ->
             lifecycleScope.launch {
                 weatherEntity.apply {
@@ -123,13 +111,13 @@ class CurrentWeather {
             }
         }
 
-         viewModel.getCityResponse.observe(owner) { cityEntity: List<City> ->
-              lifecycleScope.launch {
-                  cityEntity.apply {
-                      formatCurrentCity(cityEntity)
-                  }
-              }
-          }
+        viewModel.getCityResponse.observe(owner) { cityEntity: List<City> ->
+            lifecycleScope.launch {
+                cityEntity.apply {
+                    formatCurrentCity(cityEntity)
+                }
+            }
+        }
     }
 
     private fun formatCurrentWeather(
@@ -172,15 +160,15 @@ class CurrentWeather {
 
     }
 
-    private fun showCurrentWeatherData(prettyWeather: CurrentWeatherFormat?, weatherEntity: OneCall) {
+    private fun showCurrentWeatherData(
+        prettyWeather: CurrentWeatherFormat?,
+        weatherEntity: OneCall
+    ) {
         binding.apply {
             tvDate.text = prettyWeather?.updateAt
             tvDegrees.text = prettyWeather?.temp
             tvSymbol.text = prettyWeather?.symbol
             tvStatus.text = prettyWeather?.status
-            tvTempMaxTom.text = prettyWeather?.tempInDayTom
-            tvTempMinTom.text = prettyWeather?.tempInNightTom
-            tvStatusTom.text = prettyWeather?.forecastTom
             ivStatus.load(prettyWeather!!.iconUrl)
             setRecyclerByHour(weatherEntity.hourly, recyclerViewHours)
         }

@@ -1,15 +1,20 @@
 package com.example.climapp.ui.view
 
+import com.example.climapp.R
+import com.example.climapp.databinding.SettingsActivityBinding
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.PreferenceFragmentCompat
-import com.example.climapp.R
 
 class SettingsActivity : AppCompatActivity() {
 
+    private lateinit var binding: SettingsActivityBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.settings_activity)
+        binding = SettingsActivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
@@ -17,6 +22,18 @@ class SettingsActivity : AppCompatActivity() {
                 .commit()
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        binding.apply {
+            tvBack.setOnClickListener {
+                OpenMain()
+            }
+        }
+
+    }
+
+    private fun OpenMain() {
+        startActivity(Intent(this,MainActivity::class.java))
+        finish()
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {

@@ -18,7 +18,7 @@ class GetWeather() {
         lang: String?,
         appID: String
     ): Response<OneCall> {
-        //Log.d("WeatherError","Valores: $lat $lon $units $lang $appID")
+        Log.d("WeatherError","Valores: $lat $lon $units $lang $appID")
         return withContext(Dispatchers.IO) {
             val response = retrofit.getWeatherByLoc(lat, lon, units, lang, appID)
             response

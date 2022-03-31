@@ -1,6 +1,7 @@
 package com.example.climapp.ui.view
 
 import android.Manifest.permission.ACCESS_COARSE_LOCATION
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -44,12 +45,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun initComponents() {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        units = sharedPreferences.getBoolean("unitsApp", false)
-        language = sharedPreferences.getBoolean("languageApp", false)
+        units = sharedPreferences.getBoolean("units", false)
+        language = sharedPreferences.getBoolean("language", false)
 
         //binding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.ivSettings.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+            finish()
+        }
 
         viewModel.onCreate()
 
@@ -88,7 +94,7 @@ class MainActivity : AppCompatActivity() {
             curWeather.viewModel = viewModel
             curWeather.apiID = getString(R.string.api_key)
             curWeather.units = units
-            curWeather.languageCode = if (language) "en" else "es"
+            curWeather.lang = language
             curWeather.owner = this
             curWeather.lifecycleScope = lifecycleScope
             curWeather.resources = resources
@@ -122,7 +128,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-        units = sharedPreferences.getBoolean("unitsApp", false)
-        language = sharedPreferences.getBoolean("languageApp", false)
+        units = sharedPreferences.getBoolean("units", false)
+        language = sharedPreferences.getBoolean("language", false)
     }
 }
