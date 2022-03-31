@@ -36,10 +36,10 @@ class MainActivityVM : ViewModel() {
         this.viewModelScope.launch {
             val response = serviceGetWeather.getWeatherService(lat, lon, units, lang, appid)
             if (response.isSuccessful) {
+                Log.e(TAG, "Todo correcto" + response.body())
                 getWeatherResponse.postValue(response.body())
             } else {
                 throw CurrentWeatherNotFoundException()
-                //binding.errorContainer.isVisible = true
             }
         }
     }
@@ -52,7 +52,6 @@ class MainActivityVM : ViewModel() {
                 getCityResponse.postValue(response.body())
             } else {
                 throw CurrentCityNotFoundException()
-                //binding.errorContainer.isVisible = true
             }
         }
     }

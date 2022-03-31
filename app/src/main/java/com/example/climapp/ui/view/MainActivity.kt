@@ -4,6 +4,7 @@ import android.Manifest.permission.ACCESS_COARSE_LOCATION
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
@@ -56,7 +57,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, SettingsActivity::class.java))
             finish()
         }
-
         viewModel.onCreate()
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
@@ -107,7 +107,7 @@ class MainActivity : AppCompatActivity() {
                 curWeather.getLastLocation(fusedLocationClient)
             }
         } catch (ex: Exception) {
-            //Log.e(TAG, "Error: " + ex.message)
+            Log.e("WeatherError", "Error: " + ex.message)
             when (ex) {
                 is CurrentCityNotFoundException ->
                     showSnackbar(R.string.city_not_found)

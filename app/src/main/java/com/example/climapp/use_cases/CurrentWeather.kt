@@ -5,6 +5,9 @@ import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
+import android.view.View
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.LifecycleOwner
@@ -27,6 +30,7 @@ import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 import coil.load
+import com.example.climapp.R
 
 class CurrentWeather {
     private var latitude = ""
@@ -170,6 +174,24 @@ class CurrentWeather {
             tvSymbol.text = prettyWeather?.symbol
             tvStatus.text = prettyWeather?.status
             ivStatus.load(prettyWeather!!.iconUrl)
+
+            //Show Components
+            tvCity.visibility = View.VISIBLE
+            tvSymbol.visibility = View.VISIBLE
+            tvDegrees.visibility = View.VISIBLE
+            tvDate.visibility = View.VISIBLE
+            ivStatus.visibility = View.VISIBLE
+            tvStatus.visibility = View.VISIBLE
+            tvTempMin.visibility = View.VISIBLE
+            tvTempMax.visibility = View.VISIBLE
+            tvFeelsLike.visibility = View.VISIBLE
+            llHumidity.visibility = View.VISIBLE
+            llInfo.visibility = View.VISIBLE
+            llPressure.visibility = View.VISIBLE
+            llSunrise.visibility = View.VISIBLE
+            llSunset.visibility = View.VISIBLE
+            llWind.visibility = View.VISIBLE
+            progressBarIndicator.visibility = View.INVISIBLE
             setRecyclerByHour(weatherEntity.hourly, recyclerViewHours)
         }
     }
