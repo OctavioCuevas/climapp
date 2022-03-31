@@ -13,10 +13,10 @@ class GetCity {
     suspend fun getCityService(
         lat: String,
         lon: String,
-        appid: String
+        appID: String
     ): Response<List<City>> {
         return withContext(Dispatchers.IO) {
-            val response = retrofit.getCitiesByLatLng(lat, lon, appid)
+            val response = retrofit.getCitiesByLatLng(lat, lon, appID)
             response
         }
     }

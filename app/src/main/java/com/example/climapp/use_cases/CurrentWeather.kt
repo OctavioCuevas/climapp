@@ -6,8 +6,6 @@ import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.lifecycle.LifecycleOwner
@@ -30,7 +28,6 @@ import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 import coil.load
-import com.example.climapp.R
 
 class CurrentWeather {
     private var latitude = ""
