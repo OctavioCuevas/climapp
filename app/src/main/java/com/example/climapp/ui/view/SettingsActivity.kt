@@ -25,13 +25,13 @@ class SettingsActivity : AppCompatActivity() {
 
         binding.apply {
             tvBack.setOnClickListener {
-                OpenMain()
+                openMain()
             }
         }
 
     }
 
-    private fun OpenMain() {
+    private fun openMain() {
         startActivity(Intent(this,MainActivity::class.java))
         finish()
     }

@@ -24,13 +24,13 @@ import java.lang.Exception
 class MainActivity : AppCompatActivity() {
 
     //private val TAG = "WeatherError"
-    private val REQUEST_PERMISSSIONS_REQUEST_CODE = 17//numero random
+    private val REQUEST_PERMISSIONS_REQUEST_CODE = 17//random number
 
     //Settings
     private var units = false
     private var language = false
 
-    val viewModel: MainActivityVM by viewModels()
+    private val viewModel: MainActivityVM by viewModels()
 
     private lateinit var binding: ActivityMainBinding
 
@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         ActivityCompat.requestPermissions(
             this,
             arrayOf(ACCESS_COARSE_LOCATION),
-            REQUEST_PERMISSSIONS_REQUEST_CODE
+            REQUEST_PERMISSIONS_REQUEST_CODE
         )
     }
 

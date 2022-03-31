@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ClimAPP</string>
+    <string name="no_location_detected">No se puede accceder a la ubicación. Asegurate que el servicio de ubicación está activado en tu dispositivo.</string>
+    <string name="permission_denied_explanation">El permiso fue negado, pero es indispensable para usar el app.</string>
+    <string name="permission_rationale">El permiso de ubicación es indispensable para usar el app.</string>
+    <string name="settings">Configuración</string>
+    <string name="no_cur_weather">No se pudo encontrar el clima actual</string>
+    <string name="unit_temperature">Unidad de temperatura</string>
+    <string name="spanish">Español</string>
+    <string name="english">Inglés</string>
+    <string name="language">Idioma</string>
+    <string name="messages_header">Mensajes</string>
+    <string name="sunrise">Amanecer</string>
+    <string name="img_current_weather">Clima actual</string>
+    <string name="sunset">Atardecer</string>
+    <string name="wind">Viento</string>
+    <string name="pressure">Presión</string>
+    <string name="humidity">Humedad</string>
+    <string name="app_icon">Icono de la applicación</string>
+    <string name="weather">Clima</string>
+    <string name="back">Regresar</string>
+    <string name="title_activity_settings">Configuración</string>
+    <string name="error_ocurred">Ocurrió un error desconocido</string>
+</resources>

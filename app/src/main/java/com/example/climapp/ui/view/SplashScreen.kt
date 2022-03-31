@@ -16,7 +16,6 @@ import com.example.climapp.databinding.ActivitySplashScreenBinding
 
 class SplashScreen : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

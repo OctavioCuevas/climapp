@@ -37,7 +37,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="4dp"
-            android:contentDescription="@string/icon"
+            android:contentDescription="@string/img_current_weather"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_temp_by_hour"

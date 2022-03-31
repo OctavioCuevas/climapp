@@ -1,60 +1,44 @@
 <resources>
     <string name="app_name">ClimAPP</string>
-    <string name="no_location_detected">No se puede accceder a la ubicación. Asegurate que el servicio de ubicación está activado en tu dispositivo</string>
-    <string name="permission_denied_explanation">El permiso fue negado, pero es indispensable para usar el app</string>
-    <string name="permission_rationale">El permiso de ubicación es indispensable para usar el app</string>
-    <string name="settings">Ajustes</string>
-    <string name="icon" translatable="false">Image relate to Weather Forecast at Hours</string>
-    <string name="no_cur_weather">No se pudo encontrar el clima actual</string>
-    <string name="api_key">cbf45d88a9b71a3309d905dd5d1c4c7e</string>
+    <string name="settings">Settings</string>
+    <string name="api_key" translatable="false">cbf45d88a9b71a3309d905dd5d1c4c7e</string>
     <string name="permission_retionale" translatable="false">Location permission is required to use this app.</string>
-    <string name="location_not_found" translatable="false">Ubicación no encontrada.</string>
-    <string name="weather_not_found" translatable="false">Clima no encontrado.</string>
-    <string name="city_not_found" translatable="false">Clima no encontrado.</string>
-    <string name="error_ocurred" translatable="false">Ocurrió un error no contemplado.</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-    <string name="celsius">Celsius</string>
-    <string name="fahrenheit">Fahrenheit</string>
-    <string name="unit_temperature">Unidad de temperatura</string>
-    <string name="spanish">Español</string>
+    <string name="location_not_found" translatable="false">Location not found.</string>
+    <string name="weather_not_found" translatable="false">Weather not found</string>
+    <string name="city_not_found" translatable="false">City not found</string>
+    <string name="celsius" translatable="false">Celsius</string>
+    <string name="fahrenheit" translatable="false">Fahrenheit</string>
+    <string name="spanish">Spanish</string>
     <string name="english">English</string>
-    <string name="language">Idioma</string>
-
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
-
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="default_city">Mexico City, MX</string>
-    <string name="default_degrees">24</string>
-    <string name="default_symbol">°C</string>
-    <string name="default_date">11 Febrero, 2022 17.40</string>
-    <string name="default_status">Cielo despejado</string>
-    <string name="default_min">Min: 12º</string>
-    <string name="default_max">Max: 26º</string>
-    <string name="default_feels_like">Sensación: 22º</string>
-    <string name="sunrise">Amanecer</string>
-    <string name="sunrise_hour">06:40 AM</string>
-    <string name="img_current_weather">Clima actual</string>
-    <string name="sunset">Atardecer</string>
-    <string name="sunset_hour">07:40 PM</string>
-    <string name="wind">Viento</string>
-    <string name="wind_units">1.5 km/h</string>
-    <string name="pressure">Presión</string>
-    <string name="pressure_units">1023</string>
-    <string name="humidity">Humedad</string>
-    <string name="humidity_units">100</string>
-    <string name="settings_button">Configuración</string>
-    <string name="app_icon">Icono de la applicación</string>
-    <string name="weather">Clima</string>
-    <string name="back">Regresar</string>
+    <string name="default_city" translatable="false">Mexico City, MX</string>
+    <string name="default_degrees" translatable="false">24</string>
+    <string name="default_symbol" translatable="false">°C</string>
+    <string name="default_date" translatable="false">11 Febrero, 2022 17:40</string>
+    <string name="default_status" translatable="false">Cielo despejado</string>
+    <string name="default_min" translatable="false">Min: 12º</string>
+    <string name="default_max" translatable="false">Max: 26º</string>
+    <string name="default_feels_like" translatable="false">Sensación: 22º</string>
+    <string name="sunrise">Sunrise</string>
+    <string name="sunrise_hour" translatable="false">06:40 AM</string>
+    <string name="img_current_weather">Current weather</string>
+    <string name="sunset">Sunset</string>
+    <string name="sunset_hour" translatable="false">07:40 PM</string>
+    <string name="wind">Wind</string>
+    <string name="wind_units" translatable="false">1.5 km/h</string>
+    <string name="pressure">Pressure</string>
+    <string name="pressure_units" translatable="false">1023</string>
+    <string name="humidity">Humidity</string>
+    <string name="humidity_units" translatable="false">100</string>
+    <string name="app_icon">App icon</string>
+    <string name="weather">Weather</string>
+    <string name="back">Back</string>
+    <string name="no_location_detected">Location cannot be accessed. Make sure the location service is activated on your device</string>
+    <string name="permission_denied_explanation">The permission was denied, but it is essential to use the app.</string>
+    <string name="no_cur_weather">Could not find current weather</string>
+    <string name="unit_temperature">Temperature unit</string>
+    <string name="language">Language</string>
+    <string name="messages_header">messages</string>
+    <string name="permission_rationale">Location permission is required to use the app.</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="error_ocurred">An unknown error occurred</string>
 </resources>
