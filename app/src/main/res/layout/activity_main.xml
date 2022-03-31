@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
-        android:text="Mexico City, MX"
+        android:text="@string/default_city"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="24"
+        android:text="@string/default_degrees"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,7 +35,7 @@
         android:id="@+id/tv_symbol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="°C"
+        android:text="@string/default_symbol"
         android:textColor="@color/white"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,34 +43,35 @@
         app:layout_constraintStart_toEndOf="@+id/tv_degrees"
         app:layout_constraintTop_toTopOf="@+id/tv_degrees" />
 
-    <ImageView
-        android:id="@+id/iv_status"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_date"
-        app:srcCompat="@drawable/ic_baseline_cloud_24" />
-
     <TextView
         android:id="@+id/tv_date"
         style="@style/TextAppearance.MaterialComponents.Subtitle2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="11 Febrero, 2022 17.40"
+        android:text="@string/default_date"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_degrees" />
+
+    <ImageView
+        android:id="@+id/iv_status"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/img_current_weather"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        app:srcCompat="@drawable/ic_baseline_cloud_24" />
 
     <TextView
         android:id="@+id/tv_status"
         style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cielo despejado"
+        android:text="@string/default_status"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,9 +82,9 @@
         style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="Min: 12º"
+        android:text="@string/default_min"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_status" />
@@ -107,8 +108,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginRight="24dp"
-        android:text="Max: 26º"
+        android:layout_marginEnd="24dp"
+        android:text="@string/default_max"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_status" />
@@ -117,9 +118,9 @@
         android:id="@+id/tv_feels_like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="Sensación: 22º"
+        android:text="@string/default_feels_like"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -162,23 +163,23 @@
             android:layout_height="24dp"
             android:contentDescription="@null"
             android:src="@drawable/sunrise"
-            app:tint="@color/secundary" />
+            app:tint="@color/secondary" />
 
         <TextView
             android:id="@+id/tv_sunrise"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Amanecer"
-            android:textColor="@color/secundary" />
+            android:text="@string/sunrise"
+            android:textColor="@color/secondary" />
 
         <TextView
             android:id="@+id/tv_sunrise_hour"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="06:40 AM"
-            android:textColor="@color/secundary" />
+            android:text="@string/sunrise_hour"
+            android:textColor="@color/secondary" />
     </LinearLayout>
 
     <LinearLayout
@@ -201,23 +202,23 @@
             android:layout_height="24dp"
             android:contentDescription="@null"
             android:src="@drawable/sunset"
-            app:tint="@color/secundary" />
+            app:tint="@color/secondary" />
 
         <TextView
             android:id="@+id/tv_sunset"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Atardecer"
-            android:textColor="@color/secundary" />
+            android:text="@string/sunset"
+            android:textColor="@color/secondary" />
 
         <TextView
             android:id="@+id/tv_sunset_hour"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="07:40 PM"
-            android:textColor="@color/secundary" />
+            android:text="@string/sunset_hour"
+            android:textColor="@color/secondary" />
     </LinearLayout>
 
     <LinearLayout
@@ -240,23 +241,23 @@
             android:layout_height="24dp"
             android:contentDescription="@null"
             android:src="@drawable/wind"
-            app:tint="@color/secundary" />
+            app:tint="@color/secondary" />
 
         <TextView
             android:id="@+id/tv_wind"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Viento"
-            android:textColor="@color/secundary" />
+            android:text="@string/wind"
+            android:textColor="@color/secondary" />
 
         <TextView
             android:id="@+id/tv_wind_speed"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1.5 km/h"
-            android:textColor="@color/secundary" />
+            android:text="@string/wind_units"
+            android:textColor="@color/secondary" />
     </LinearLayout>
 
     <LinearLayout
@@ -281,23 +282,23 @@
             android:layout_height="24dp"
             android:contentDescription="@null"
             android:src="@drawable/pressure"
-            app:tint="@color/secundary" />
+            app:tint="@color/secondary" />
 
         <TextView
             android:id="@+id/tv_pressure"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Presión"
-            android:textColor="@color/secundary" />
+            android:text="@string/pressure"
+            android:textColor="@color/secondary" />
 
         <TextView
             android:id="@+id/tv_pressure_val"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1023"
-            android:textColor="@color/secundary" />
+            android:text="@string/pressure_units"
+            android:textColor="@color/secondary" />
     </LinearLayout>
 
     <LinearLayout
@@ -321,23 +322,23 @@
             android:layout_height="24dp"
             android:contentDescription="@null"
             android:src="@drawable/humidity"
-            app:tint="@color/secundary" />
+            app:tint="@color/secondary" />
 
         <TextView
             android:id="@+id/tv_humidity"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Humedad"
-            android:textColor="@color/secundary" />
+            android:text="@string/humidity"
+            android:textColor="@color/secondary" />
 
         <TextView
             android:id="@+id/tv_humidity_val"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100"
-            android:textColor="@color/secundary" />
+            android:text="@string/humidity_units"
+            android:textColor="@color/secondary" />
     </LinearLayout>
 
     <LinearLayout
@@ -361,7 +362,7 @@
             android:layout_height="55dp"
             android:contentDescription="@null"
             android:src="@drawable/cct_logo"
-            app:tint="@color/secundary" />
+            app:tint="@color/secondary" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -378,6 +379,7 @@
         android:id="@+id/iv_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/settings_button"
         app:layout_constraintBottom_toTopOf="@+id/tv_temp_min"
         app:layout_constraintEnd_toStartOf="@+id/tv_city"
         app:layout_constraintHorizontal_bias="0.0"
@@ -387,4 +389,5 @@
         android:clickable="true"
         android:focusable="true"
         app:srcCompat="@drawable/ic_settings" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

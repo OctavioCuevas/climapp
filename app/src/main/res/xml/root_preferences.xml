@@ -6,14 +6,14 @@
         <SwitchPreferenceCompat
             android:id="@+id/spc_units"
             app:key="units"
-            app:summaryOff="Farenheit"
-            app:summaryOn="Celsius"
-            app:title="Unidad de temperatura" />
+            app:summaryOff="@string/fahrenheit"
+            app:summaryOn="@string/celsius"
+            app:title="@string/unit_temperature" />
 
         <SwitchPreferenceCompat
             app:key="language"
-            app:summaryOn="Español"
-            app:summaryOff="English"
+            app:summaryOn="@string/spanish"
+            app:summaryOff="@string/english"
             app:title="Idioma"/>
 
     </PreferenceCategory>
