@@ -3,6 +3,7 @@ Práctica individual final para [Kodemia](https://kodemia.mx)
 
 # Autor
 * Octavio Cuevas Conde
+
 [![An old rock in the desert](/linkedin.png "Linkedin Octavio Cuevas")](https://www.linkedin.com/in/octavio-cuevas/)
 
 # Lenguaje
