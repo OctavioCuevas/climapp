@@ -28,6 +28,7 @@ import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 import coil.load
+import com.example.climapp.utils.translateDate
 
 class CurrentWeather {
     private var latitude = ""
@@ -84,7 +85,6 @@ class CurrentWeather {
         } else {
             throw NeverAskPermissionException()
         }
-
     }
 
     private fun getWeatherData() {
@@ -143,7 +143,13 @@ class CurrentWeather {
                 )) else "Unknown",
                 weatherDescription,
                 dt,
-                SimpleDateFormat("EEEE, d MMMM", Locale.ENGLISH).format(Date(dt * 1000)),
+                translateDate(
+                    this.languageCode == "sp",
+                    SimpleDateFormat(
+                        "EEEE, d MMMM",
+                        Locale.forLanguageTag("es_ES")
+                    ).format(Date(dt * 1000))
+                ),
                 icon,
                 resources.getIdentifier("ic_weather_$icon", "drawable", packageName),
                 iconSecond,

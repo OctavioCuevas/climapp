@@ -4,6 +4,7 @@ import android.Manifest.permission.ACCESS_COARSE_LOCATION
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
@@ -51,6 +52,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.ivRefresh.setOnClickListener {
+            this.recreate()
+        }
+
         binding.ivSettings.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
             finish()
@@ -68,6 +73,7 @@ class MainActivity : AppCompatActivity() {
             arrayOf(ACCESS_COARSE_LOCATION),
             REQUEST_PERMISSIONS_REQUEST_CODE
         )
+        binding.ivRefresh.callOnClick()
     }
 
     private fun showSnackbar(
